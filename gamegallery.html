@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game List</title>
+    <link rel="stylesheet" href="gamegallery.css">
+</head>
+<body>
+    <h1>Games</h1>
+    <div id="games-list"></div>
+
+    <script>
+        // Solicitar los datos de los reportes al backend
+        fetch('http://20.218.126.138:8080/report/')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(reports => {
+                const gamesList = document.getElementById('games-list');
+
+                if (reports.length === 0) {
+                    gamesList.innerHTML = `<p>No hay reportes disponibles.</p>`;
+                    return;
+                }
+
+                reports.forEach(report => {
+                    const reportElement = document.createElement('div');
+                    reportElement.innerHTML = `
+                        <h3>${report.game}</h3>
+                        <p>Comentario: ${report.comment}</p>
+                        <div>
+                            ${report.fileMimeType?.startsWith('image/') ? 
+                                `<img src="${report.fileBase64}" alt="${report.game}" />` :
+                                (report.fileMimeType?.startsWith('video/') ?
+                                    `<video controls>
+                                        <source src="${report.fileBase64}" type="${report.fileMimeType}">
+                                        Tu navegador no soporta el reproductor de video.
+                                    </video>` :
+                                    `<p>Vista previa no disponible.</p>`)}
+                        </div>
+                    `;
+                    gamesList.appendChild(reportElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error al obtener los reportes:', error);
+                const gamesList = document.getElementById('games-list');
+                gamesList.innerHTML = `<p>Ocurrió un error al cargar los datos.</p>`;
+            });
+    </script>
+</body>
+</html>

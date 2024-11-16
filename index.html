@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameSphere</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Milonga&display=swap');
+    </style>
+</head>
+<body>
+    <!--Navigation menu-->
+    <header id="main-header">
+        <nav id="main-nav">
+            <ul class="nav-list">
+                <li><a href="game.html">Subir archivo</a></li>
+                <li><a href="#servicios">Quienes somos?</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <!--Banner-->
+    <section id="main">
+        <div class="content">
+            <h1>GameSphere</h1>
+            <p>Una nueva forma de comunicarte!</p>
+            <div class="buttons">
+                <button onclick="window.location.href = 'game.html';">Compartir</button>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src="img/GameSphere.png" alt="logo">
+        </div>
+    </section>
+
+    <!--AQUI PONER SERVICIOS-->
+    <section class = "servicios" id="servicios">    
+
+        <div id="cont">
+            <div>
+                <img src="img/logo.jpeg" alt="jugando">   
+            </div>
+                
+            <div>
+                <h2>Quienes somos?</h2>
+                <p>GameSphere es una solución de software basada en <br>
+                    una arquitectura de tres capas, diseñada para resolver <br>
+                    el problema de la dispersión y falta de interacción <br>
+                    directa entre jugadores en la comunidad de videojuegos. <br>
+                    A medida que el número de gamers crece, la necesidad de <br>
+                    un espacio dedicado para compartir clips de partidas, <br>
+                    capturas de pantalla, y organizar torneos se vuelve más evidente, <br>
+                    especialmente en una industria donde la competencia y la <br>
+                    colaboración en línea son esenciales. Sin una herramienta <br>
+                    centralizada que facilite la comunicación y el intercambio <br>
+                    de contenido entre los jugadores, la experiencia de usuario puede fragmentarse.
+                </p>    
+            </div>
+        </div>   
+    </section>
+
+    
+    <section class="contacto" id = "contacto">
+        <div class="contenedor">
+            <h2>Contacto</h2>
+            <p>Ingrese sus datos y su mensaje para poder comunicarnos con usted!</p><br>
+            <form action="" class="form">
+                <input type="text" name="" id="" placeholder="Ingresar nombre" class="input">
+                <input type="email" name="" id="" placeholder="Ingrese correo electrónico" class="input">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Ingresar mensaje" class="input"></textarea>
+                <input type="submit" value="Enviar" class="input">
+            </form>
+        </div>
+    
+    </section>
+
+    <!-- Sección footer -->
+    <footer>
+        <div class="containerF">
+            <div class="boxF">
+                <img src="img/telefono.svg" alt="telefono">
+                <p>
+                    +51 999999999 <br>
+                    01 5466546
+                </p>
+            </div>
+    
+            <div class="boxF">
+                <img src="img/email.svg" alt="correo">
+                <p>
+                    Contacto@GameSphere.com
+                </p>
+            </div>
+    
+            <div class="boxF">
+                <img src="img/descarga.png" alt="descarga">
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
